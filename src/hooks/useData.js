@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useData(url) {
+function useData(url, refetchData) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function useData(url) {
         ignore = true;
       };
     }
-  }, [url]);
+  }, [url, refetchData]);
 
   return data;
 }

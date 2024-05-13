@@ -65,6 +65,32 @@ nav {
   margin-top: 16px;
 }
 
+.published {
+  color: green;
+}
+
+.unpublished {
+  color: orange;
+}
+
+.published-container {
+  border: 1px solid #dbdbdb;
+  padding: 8px 16px;
+  width: fit-content;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.published-container p {
+  margin: unset;
+}
+
+.publish-btn {
+ padding: 16px;
+}
+
 /* =============== COMMENTS =============== */
 
 .comments-section {
