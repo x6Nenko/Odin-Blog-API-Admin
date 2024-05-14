@@ -6,6 +6,7 @@ import ErrorPage from './error-page';
 import Registration from './routes/Registration';
 import Login from './routes/Login';
 import Post from './routes/Post';
+import NewPost from './routes/NewPost';
 import './index.css'
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       //   path: "posts",
       //   element: <Posts />,
       // },
+      {
+        path: "newpost",
+        element: <NewPost />,
+      },
       {
         path: "posts/:postid",
         element: <Post />,
