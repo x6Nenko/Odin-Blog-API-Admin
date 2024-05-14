@@ -106,6 +106,10 @@ nav {
   margin: 50px auto 0;
 }
 
+.cancel-btn {
+  margin-left: 16px;
+}
+
 /* =============== COMMENTS =============== */
 
 .comments-section {
