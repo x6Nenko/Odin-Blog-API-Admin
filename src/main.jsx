@@ -7,6 +7,8 @@ import Registration from './routes/Registration';
 import Login from './routes/Login';
 import Post from './routes/Post';
 import NewPost from './routes/NewPost';
+import EditPost from './routes/EditPost';
+import DeletePost from './routes/DeletePost';
 import './index.css'
 
 const router = createBrowserRouter([
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
       //   path: "posts",
       //   element: <Posts />,
       // },
+      {
+        path: "deletepost/:postid",
+        element: <DeletePost />,
+      },
+      {
+        path: "editpost/:postid",
+        element: <EditPost />,
+      },
       {
         path: "newpost",
         element: <NewPost />,

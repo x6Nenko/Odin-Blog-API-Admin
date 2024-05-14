@@ -5,7 +5,6 @@ import { AuthContext } from "../contexts/AuthContext";
 
 const Home = () => {
   const isLogged = useContext(AuthContext);
-  //const userData = useData();
   const [changePublishState, setChangePublishState] = useState(false);
   const postsData = useData('http://localhost:3000/posts', changePublishState);
   const postsArray = postsData && postsData.posts;
@@ -55,13 +54,17 @@ const Home = () => {
 
                 {post.published === true ? 
                   <div className="published-container">
-                    <p className="published">Published</p>
-                    <a href="#" onClick={(e) => handlePublishBtn(e, post)}>Unpublish</a>
+                    <div className="published-row">
+                      <p className="published">Published</p>
+                      <a href="#" onClick={(e) => handlePublishBtn(e, post)}>Unpublish</a>
+                    </div>
                   </div>
                 :
                   <div className="published-container">
-                    <p className="unpublished">Unpublished</p>
-                    <a href="#" onClick={(e) => handlePublishBtn(e, post)}>Publish</a>
+                    <div className="published-row">
+                      <p className="unpublished">Unpublished</p>
+                      <a href="#" onClick={(e) => handlePublishBtn(e, post)}>Publish</a>
+                    </div>
                   </div>
                 }
 
