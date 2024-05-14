@@ -93,7 +93,9 @@ const Post = () => {
     }
   }
 
-  async function handleSubmitCommentEdit() {
+  async function handleSubmitCommentEdit(e) {
+    e.preventDefault();
+
     try {
       const response = await fetch(`https://pleasant-utopian-duke.glitch.me/posts/${postid}/comments/${isEdit}`, {
         method: 'PUT',
@@ -105,6 +107,7 @@ const Post = () => {
       });
 
       if (response.ok) {
+        setRefetchComments(!refetchComments);
         console.log("ok");
       } else {
         console.log("not ok");
