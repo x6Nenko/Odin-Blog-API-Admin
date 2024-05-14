@@ -20,7 +20,7 @@ const NewPost = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/posts', {
+      const response = await fetch('https://pleasant-utopian-duke.glitch.me/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ import { AuthContext } from "../contexts/AuthContext";
 const Home = () => {
   const isLogged = useContext(AuthContext);
   const [changePublishState, setChangePublishState] = useState(false);
-  const postsData = useData('http://localhost:3000/posts', changePublishState);
+  const postsData = useData('https://pleasant-utopian-duke.glitch.me/posts', changePublishState);
   const postsArray = postsData && postsData.posts;
 
   async function handlePublishBtn(e, post) {
@@ -19,7 +19,7 @@ const Home = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/posts/${post._id}`, {
+      const response = await fetch(`https://pleasant-utopian-duke.glitch.me/posts/${post._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

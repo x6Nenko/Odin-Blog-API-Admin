@@ -7,8 +7,8 @@ const Post = () => {
   const { postid } = useParams();
   const [refetchPost, setRefetchPost] = useState(false);
   const [refetchComments, setRefetchComments] = useState(false);
-  const postData = useData(`http://localhost:3000/posts/${postid}`, refetchPost);
-  const commentsData = useData(`http://localhost:3000/posts/${postid}/comments`, refetchComments);
+  const postData = useData(`https://pleasant-utopian-duke.glitch.me/posts/${postid}`, refetchPost);
+  const commentsData = useData(`https://pleasant-utopian-duke.glitch.me/posts/${postid}/comments`, refetchComments);
   const commentsArray = commentsData && commentsData.posts;
 
   function convertTime(time) {
@@ -26,7 +26,7 @@ const Post = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/posts/${postid}`, {
+      const response = await fetch(`https://pleasant-utopian-duke.glitch.me/posts/${postid}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const Post = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:3000/posts/${postid}/comments/${comment._id}`, {
+      const response = await fetch(`https://pleasant-utopian-duke.glitch.me/posts/${postid}/comments/${comment._id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const Post = () => {
 
   async function handleSubmitCommentEdit() {
     try {
-      const response = await fetch(`http://localhost:3000/posts/${postid}/comments/${isEdit}`, {
+      const response = await fetch(`https://pleasant-utopian-duke.glitch.me/posts/${postid}/comments/${isEdit}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

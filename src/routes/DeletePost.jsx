@@ -5,7 +5,7 @@ import useData from "../hooks/useData";
 
 const DeletePost = () => {
   const { postid } = useParams();
-  const postData = useData(`http://localhost:3000/posts/${postid}`);
+  const postData = useData(`https://pleasant-utopian-duke.glitch.me/posts/${postid}`);
   const navigate = useNavigate();
   const isLogged = useContext(AuthContext);
 
@@ -13,7 +13,7 @@ const DeletePost = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:3000/posts/${postid}`, {
+      const response = await fetch(`https://pleasant-utopian-duke.glitch.me/posts/${postid}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
