@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 .main-wrapper {
@@ -12,6 +13,34 @@
 
 button, input, textarea {
   padding: 8px;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: #334155;
+  transition: all .1s ease-in;
+  position: relative;
+  text-decoration: none;
+}
+
+a::before {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #fee2e2;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 /* =============== HEADER / NAVBAR =============== */
@@ -19,7 +48,9 @@ button, input, textarea {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 32px 0;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 nav, .sign-links {
@@ -32,6 +63,13 @@ nav {
 
 .sign-links {
   gap: 20px;
+}
+
+.logo {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #f87171;
 }
 
 /* =============== HOME/POSTS/POST =============== */
@@ -47,6 +85,11 @@ nav {
   margin-top: 40px;
 }
 
+.recently-published-header {
+  font-size: 16px;
+  color: #334155;
+}
+
 .recently-published-article p {
  margin: 8px 0 16px;
 }
@@ -56,9 +99,14 @@ nav {
 }
 
 .single-article {
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.single-article-info {
+  color: #94a3b8;
 }
 
 .single-article-text {
@@ -130,7 +178,7 @@ nav {
 .comment span {
   margin-left: 16px;
   font-size: 14px;
-  color: #b4b4b4;
+  color: #94a3b8;
 }
 
 .send-comment-btn {

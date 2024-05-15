@@ -14,7 +14,7 @@ const Navigation = () => {
 
   return (
     <header>
-      <Link to="/"><h1>Blog API</h1></Link>
+      <Link to="/" className="logo"><h1>Blog API</h1></Link>
       <nav>
         {isLogged.isLogged === true && 
           <NavLink
